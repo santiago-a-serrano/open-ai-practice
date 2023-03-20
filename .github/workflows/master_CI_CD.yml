@@ -14,9 +14,6 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Setup
-        run: npm ci
-
       - name: Test
         run: |
           npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
