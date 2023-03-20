@@ -1,0 +1,25 @@
+<div>
+    <Head>
+        <title>OpenAI Quickstart</title>
+        <link rel="icon" href="/dog.png"/>
+    </Head>
+
+    <main className=main>
+        <div class="img-container">
+            <div class="img-content" *ngFor="let url of image_urls">
+              <img src="{{ url }}" class="icon" width="192" height="192"/>
+            </div>
+          </div>
+        <h3>Image generator</h3>
+        <form>
+            <input
+                type="text"
+                name="prompt"
+                placeholder="Describe something"
+                [(ngModel)]="prompt"
+            />
+            <input type="button" value="Generate image" (click)="postCompletition()" />
+        </form>
+        <div className="result">{{result}}</div>
+    </main>
+</div>

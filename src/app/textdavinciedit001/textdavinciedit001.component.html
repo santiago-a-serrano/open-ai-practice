@@ -1,0 +1,27 @@
+<div>
+    <Head>
+        <title>OpenAI Quickstart</title>
+        <link rel="icon" href="/textedit.png"/>
+    </Head>
+
+    <main className=main>
+        <img src="/assets/textedit.png" className=icon width="192" height="192"/>
+        <h3>Text editor</h3>
+        <form>
+            <input
+                type="text"
+                name="input"
+                placeholder="Put some text here"
+                [(ngModel)]="input"
+            />
+            <input
+                type="text"
+                name="instruction"
+                placeholder="What do you want to do with this text?"
+                [(ngModel)]="instruction"
+            />
+            <input type="button" value="Edit" (click)="postCompletition()" />
+        </form>
+        <div className="result">{{result}}</div>
+    </main>
+</div>

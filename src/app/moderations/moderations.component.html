@@ -1,0 +1,43 @@
+<div>
+    <Head>
+        <title>OpenAI Quickstart</title>
+        <link rel="icon" href="/moderation.png"/>
+    </Head>
+
+    <main className=main>
+        <img src="/assets/moderation.png" className=icon height="192" width="192" />
+        <h3>See if text needs moderation</h3>
+        <form>
+            <input
+                type="text"
+                name="text"
+                placeholder="Write here"
+                [(ngModel)]="text"
+            />
+            <input type="button" value="Test" (click)="postCompletition()" />
+        </form>
+        <div *ngFor="let data of jsonData">
+            <p>Flagged: {{ data.flagged }}</p>
+            <p>Categories:</p>
+            <ul>
+              <li>Sexual: {{ data.categories['sexual'] }}</li>
+              <li>Hate: {{ data.categories['hate'] }}</li>
+              <li>Violence: {{ data.categories['violence'] }}</li>
+              <li>Self-harm: {{ data.categories['self-harm'] }}</li>
+              <li>Sexual/minors: {{ data.categories['sexual/minors'] }}</li>
+              <li>Hate/threatening: {{ data.categories['hate/threatening'] }}</li>
+              <li>Violence/graphic: {{ data.categories['violence/graphic'] }}</li>
+            </ul>
+            <p>Category Scores:</p>
+            <ul>
+              <li>Sexual: {{ data.category_scores['sexual'] }}</li>
+              <li>Hate: {{ data.category_scores['hate'] }}</li>
+              <li>Violence: {{ data.category_scores['violence'] }}</li>
+              <li>Self-harm: {{ data.category_scores['self-harm'] }}</li>
+              <li>Sexual/minors: {{ data.category_scores['sexual/minors'] }}</li>
+              <li>Hate/threatening: {{ data.category_scores['hate/threatening'] }}</li>
+              <li>Violence/graphic: {{ data.category_scores['violence/graphic'] }}</li>
+            </ul>
+          </div>
+    </main>
+</div>
